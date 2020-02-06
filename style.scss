@@ -1,0 +1,58 @@
+body{
+    background-color: #c4c4c4;
+    padding: unset;
+    margin: unset;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+
+#board{
+    width: 700px;
+    display:grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);
+    height: 700px;
+    margin:auto;
+}
+.tile{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: border 0.2s ease-out ;
+    &[data-type~="black"]{
+        background-color: rgb(32, 32, 32);
+        color:white
+    }
+    &[data-type~="white"]{
+        background-color: white;
+        color: rgba(105, 105, 105, 0.637)
+    }
+    &:hover{
+        border:2px solid rgb(35, 97, 233);
+        background-color: rgba(17, 116, 230, 0.808);
+        color: white;
+    }
+}
+
+
+.chess-piece-con{
+    cursor: pointer;
+    height: 80px;
+    width: 80px;
+    background-color: rgb(224, 224, 224);
+    border-radius: 100px;
+    position: absolute;
+    transition: all 1s ease-in-out ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:inset 0px 0px 1px #ababab, inset 0px 0px 0 4px white, inset -9px -13px 11px #dadada, inset 7px 10px 9px #ffffff, inset 5px 5px 3px 1px #565555;
+}
+
+.chess-piece-con:active{
+    background-color: #b9b9b9;
+}
